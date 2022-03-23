@@ -39,6 +39,10 @@ inputs:
   pr_allow_empty:
     description: Create PR even if no changes
     required: false
+  github_url:
+    description: URL for github server
+    required: false
+    default: "https://github.com" 
   github_token:
     description: GitHub token secret
     required: true
@@ -54,3 +58,4 @@ runs:
   image: 'Dockerfile'
   env:
     GITHUB_TOKEN: ${{ inputs.github_token }}
+    GITHUB_SERVER_URL: ${{ inputs.github_url }}
